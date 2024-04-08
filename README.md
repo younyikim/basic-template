@@ -2,9 +2,12 @@
 
 #### 템플릿 정보
 
-개발도구 : Vite, TypeScript, ESLint, Prettier, Husky, Lint-staged
-패키지 매니저: Yarn
-프레임워크 및 라이브러리 : React, React Router, React Query, Recoil, Emotion, Material UI
+개발도구 : Vite, TypeScript, ESLint, Prettier, Husky, Lint-staged   
+
+패키지 매니저: Yarn   
+
+프레임워크 및 라이브러리 : React, React Router, React Query, Recoil, Emotion, Material UI   
+
 기타 라이브러리 : Axios, Dayjs, Loadsh
 
 ---
