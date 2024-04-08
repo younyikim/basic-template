@@ -1,6 +1,19 @@
 # React, TypeScript, Vite 기반 기본 템플릿
 
-#### 템플릿 정보
+**Table of Content**
+
+1. [템플릿 정보](#템플릿-정보)
+2. [Vite로 프로젝트 시작하기](#1-vite로-프로젝트-시작하기)
+3. [ESLint, Prettier 설정](#2-eslint-prettier-설정)
+4. [Husky 설정](#3-husky-설정)
+5. [TypeScript에서 절대 경로 설정](#4-typescript에서-절대-경로-설정)
+6. [라이브러리 설치](#5-라이브러리-설치)
+7. [React Query 아키텍쳐 추가](#6-react-query-아키텍쳐-추가)
+8. [Axios 캡슐화](#7-axios-캡슐화)
+
+---
+
+### 0. 템플릿 정보
 
 개발도구 : Vite, TypeScript, ESLint, Prettier, Husky, Lint-staged
 
@@ -12,7 +25,7 @@
 
 ---
 
-#### 1. Vite로 프로젝트 시작하기
+### 1. Vite로 프로젝트 시작하기
 
 > Node.js v18+, v20+ 이상
 
@@ -52,7 +65,7 @@ $ yarn
 !.yarn/versions
 ```
 
-#### 2. ESLint, Prettier, Husky 설정
+### 2. ESLint, Prettier 설정
 
 **ESLint**
 
@@ -136,7 +149,8 @@ module.exports = {
  trailingComma: "es5",
   tabWidth: 4,
   semi: true,
-  singleQuote: false,](<printWidth: 100,
+  singleQuote: false,
+  printWidth: 100,
   tabWidth: 2,
   singleQuote: true,
   trailingComma: "all",
@@ -152,3 +166,15 @@ module.exports = {
 
 - Default formatter : Prettier로 설정한다.
 - Format On Save(Optional): 저장 시, 자동 포맷팅을 수행한다.
+
+---
+
+### 3. Husky 설정
+
+### 4. TypeScript에서 절대 경로 설정
+
+### 5. 라이브러리 설치
+
+### 6. React Query 아키텍쳐 추가
+
+### 7. Axios 캡슐화
