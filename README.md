@@ -37,6 +37,21 @@ $ cd my-react-ts-app
 $ yarn
 ```
 
+**.gitignore 설정**
+
+- Zero-install을 사용하지 않는 경우, 아래 파일들을 .gitignore에 추가 ([관련 링크](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored))
+
+```bash
+# yarn 패키지 관련
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+```
+
 #### 2. ESLint, Prettier, Husky 설정
 
 **ESLint**
