@@ -205,6 +205,68 @@ $ npx mrm lint-staged
 
 ### 4. TypeScript에서 절대 경로 설정
 
+- 특정 컴포넌트나 파일을 import할 때 상대 경로를 사용하면, 경로의 depth가 깊어질 수록 가독성이 매우 떨어진다. 이러한 문제를 방지하기 위해 `tsconfig.json` 설정을 통해 `절대경로`를 설정할 수 있다.
+- Vite를 사용하는 경우, `tsconfig.json`, `vite.config.ts`에서 모두 절대 경로 설정이 필요하다.
+
+**(1) `tsconfig.json` 설정**
+
+- `compilerOptions`옵션의 `baseUrl`, `paths`를 이용해 절대경로를 설정한다.
+  - `baseUrl` : paths 설정을 위해 반드시 필요한 옵션
+  - `paths` : key-value 쌍으로 이루어진 객체이며, 절대경로를 정의하고자 하는 경로 이름을 key에 입력하여 baseUrl을 기준으로 상대적인 경로를 value에 입력한다.
+
+```json
+// tsconfig.json
+{
+	"compilerOptions": {
+		"baseUrl": ".", // 이 경우는 tsconfig.json이 존재하는 루트 디렉토리를 기준으로 삼는다.
+		"paths": {
+			"@/*": ["src/*"],
+			"@components/*": ["src/components/*"],
+			/... other .../
+		}
+	}
+}
+```
+
+**(2) `vite.config.ts` 설정**
+
+- 절대경로에 필요한 플러그인 설치 : vite-tsconfig-paths, @types/node
+
+```bash
+$ yarn add --dev vite-tsconfig-paths @types/node
+```
+
+- `vite.config.ts`
+  - defineConfig 내부의 resolve의 alias 배열 안에 객체 형태로 절대 경로를 입력하면 된다.
+  - tsconfig.json에서 paths에 정의한 것과 마찬가지로, `find` 에는 절대 경로를 정의하고자 하는 경로 이름, `replacement`에는 baseUrl을 기준으로 상대적인 경로를 value에 입력한다.
+
+```js
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { resolve } from 'path';
+
+// https://vitejs.dev/config/
+
+export default defineConfig({
+	plugins: [react()],
+	resolve: {
+		alias: [
+			{ find: '@', replacement: resolve(__dirname, 'src') },
+			{ find: '@components', replacement: resolve(__dirname, 'src/components') },
+			/... other .../,
+		],
+	},
+});
+```
+
+**사용 예시**
+
+```js
+import path1 from '@components/home/main.tsx';
+```
+
 ### 5. 라이브러리 설치
 
 ### 6. React Query 아키텍쳐 추가
