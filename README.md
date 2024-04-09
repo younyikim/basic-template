@@ -168,6 +168,41 @@ module.exports = {
 
 ### 3. Husky, lint-staged 설정
 
+**Husky란?**
+
+- Git은 Hook이라는 기능을 통해, Git의 특정 이벤트(add, commit, push 등)을 실행 시, 해당 이벤트에 Hook(갈고리)를 걸어 Hook에 설정된 스크립트를 실행할 수 있다.
+- Husky는 이러한 Git Hook을 간편하게 사용할 수 있도록 도와주는 도구이다.
+- Husky를 사용하는 이유는, 협업 시 ESLint와 Prettier를 사용해 팀내 규칙을 정의해 코딩을 한다. 하지만 ESLint와 Prettier 규칙을 지키지 않은 채 원격 저장소에 코드를 올릴 수 있고, 이렇게 되면 정의한 코딩 규칙의 의미가 퇴색되고, 코드 일관성이 줄어들어 원활한 협업이 어려워질 수 있다. 하지만 Husky를 사용하면 Git의 특정 이벤트(add, commit, push 등)이 발생하기 전 자동으로 ESLint와 Prettier를 작동시켜 이런 경우를 사전에 방지할 수 있다.
+
+**Lint-Staged란?**
+
+- Git의 특정 이벤트가 발생될 때마다 전체 애플리케이션에서 검사해야하는 확장자에 해당하는 모든 파일을 검사하는 것은 비효율적이다. lint-staged를 husky와 함께 사용하면, 변경된 파일들만 검사를 진행한다.
+
+**husky & lint-staged 설치하기**
+
+```bash
+$ npx mrm lint-staged
+```
+
+> [mrm](https://mrm.js.org/)이란?
+> 오픈소스 프로젝트 환경 설정(`package.json`, `.gitignore` 등) 을 동기화 하기 위한 커맨드 라인 도구이다. mrm을 사용하여 lint-staged를 설치하면 필요한 기본 설정이 제공된다.
+
+- 위 명령어를 실행하면, `.husky` 폴더가 생성되며, 폴더 하위에 `pre-commit`파일이 생성된다.
+  - pre-commit 파일이 존재하지 않는다면, 아래 명령어를 실행한다.
+    - `$ npx husky add .husky/pre-commit "yarn lint-staged"`
+- 그리고`package.json`파일에 husky, lint-staged가 devDependencies에 설치되며, lint-staged 검사를 수행할 대상을 정의하는 스크립트가 추가된다.
+- TypeScript를 사용하는 경우, lint-staged 스크립트를 아래와 같이 수정한다.
+  - 검사 대상 파일을 ts, tsx 파일로 지정하고, Prettier와 ESLint를 모두 사용하고 있기 때문에 아래와 같이 스크립트를 수정한다.
+
+```json
+"lint-staged": {
+	"*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+}
+```
+
 ### 4. TypeScript에서 절대 경로 설정
 
 ### 5. 라이브러리 설치
