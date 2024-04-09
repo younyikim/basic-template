@@ -5,7 +5,7 @@
 1. [템플릿 정보](#템플릿-정보)
 2. [Vite로 프로젝트 시작하기](#1-vite로-프로젝트-시작하기)
 3. [ESLint, Prettier 설정](#2-eslint-prettier-설정)
-4. [Husky 설정](#3-husky-설정)
+4. [Husky, lint-staged 설정](#3-husky-lint-staged-설정)
 5. [TypeScript에서 절대 경로 설정](#4-typescript에서-절대-경로-설정)
 6. [라이브러리 설치](#5-라이브러리-설치)
 7. [React Query 아키텍쳐 추가](#6-react-query-아키텍쳐-추가)
@@ -81,22 +81,19 @@ $ yarn
 ```js
 // .eslintrc.cjs
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-  ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "react-refresh"],
-  rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
-  },
+	root: true,
+	env: { browser: true, es2020: true },
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react-hooks/recommended',
+	],
+	ignorePatterns: ['dist', '.eslintrc.cjs'],
+	parser: '@typescript-eslint/parser',
+	plugins: ['@typescript-eslint', 'react-refresh'],
+	rules: {
+		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+	},
 };
 ```
 
@@ -169,7 +166,7 @@ module.exports = {
 
 ---
 
-### 3. Husky 설정
+### 3. Husky, lint-staged 설정
 
 ### 4. TypeScript에서 절대 경로 설정
 
