@@ -9,9 +9,13 @@ export default defineConfig({
 	resolve: {
 		alias: [
 			{ find: '@', replacement: resolve(__dirname, 'src') },
+			{ find: '@pages', replacement: resolve(__dirname, 'src/pages') },
 			{ find: '@components', replacement: resolve(__dirname, 'src/components') },
-			{ find: '@icons', replacement: resolve(__dirname, 'src/icons') },
-			{ find: '@images', replacement: resolve(__dirname, 'src/images') },
+			{ find: '@utils', replacement: resolve(__dirname, 'src/utils') },
+			{ find: '@assets', replacement: resolve(__dirname, 'src/assets') },
+			{ find: '@public', replacement: resolve(__dirname, 'public') },
+			{ find: '@icons', replacement: resolve(__dirname, 'public/assets/icons') },
+			{ find: '@images', replacement: resolve(__dirname, 'public/assets/images') },
 		],
 	},
 });
