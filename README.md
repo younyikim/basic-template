@@ -269,6 +269,15 @@ import path1 from '@components/home/main.tsx';
 
 ### 5. 라이브러리 설치
 
+- **Routing** : React Router, React Router DOM(v6)
+  - React-router-dom 설치 : `$ yarn add react-router-dom`
+- **상태 관리 라이브러리** : Zustand
+- **Data Fetching** : TanStack Query + Axios
+- **Styling** : Tailwind CSS (Utility-First-CSS)
+- **UI 라이브러리** : [shadcn/ui](https://ui.shadcn.com/)
+- **Animation 라이브러리**: Framer Motion
+- **Code Style**: ESLint + Prettier
+
 ### 6. React Query 아키텍쳐 추가
 
 ### 7. Axios 캡슐화
