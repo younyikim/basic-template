@@ -271,9 +271,18 @@ import path1 from '@components/home/main.tsx';
 
 - **Routing** : React Router, React Router DOM(v6)
   - React-router-dom 설치 : `$ yarn add react-router-dom`
+- **Styling** : Tailwind CSS (Utility-First-CSS)
+  - Tailwind CSS 설치
+    ```bash
+    $ yarn add --dev tailwindcss postcss autoprefixer
+    $ npx tailwindcss init -p
+    ```
+  - 함께 설치하면 좋은 툴들
+    1. VSC의 `Tailwind CSS IntelliSense` 익스텐션
+    2. VSC의 `Tailwind Document` 익스텐션
+    3. [Automatic Class Sorting with Prettier](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 - **상태 관리 라이브러리** : Zustand
 - **Data Fetching** : TanStack Query + Axios
-- **Styling** : Tailwind CSS (Utility-First-CSS)
 - **UI 라이브러리** : [shadcn/ui](https://ui.shadcn.com/)
 - **Animation 라이브러리**: Framer Motion
 - **Code Style**: ESLint + Prettier
