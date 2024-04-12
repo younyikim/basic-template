@@ -4,6 +4,9 @@ import reactLogo from '@assets/react.svg';
 import viteLogo from '@public/vite.svg';
 import '@/App.css';
 
+// Components
+import { Button } from '@/components/ui/button';
+
 function Root() {
 	const [count, setCount] = useState(0);
 
@@ -26,6 +29,7 @@ function Root() {
 			</div>
 			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
 			<h1 className="p-1 pt-2 text-3xl font-bold underline">Hello Tailwind CSS!</h1>
+			<Button onClick={() => console.log('Clicked')}>Click me</Button>
 			<Outlet />
 		</>
 	);
