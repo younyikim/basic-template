@@ -281,7 +281,7 @@ import path1 from '@components/home/main.tsx';
     1. VSC의 `Tailwind CSS IntelliSense` 익스텐션
     2. VSC의 `Tailwind Document` 익스텐션
     3. [Automatic Class Sorting with Prettier](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
-- **UI 라이브러리** : [shadcn/ui](https://ui.shadcn.com/)
+- **Headless UI 컬렉션** : [shadcn/ui](https://ui.shadcn.com/)
 
 ---
 
