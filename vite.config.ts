@@ -9,7 +9,7 @@ export default defineConfig({
 	server: {
 		open: '/',
 		proxy: {
-			// // /api 라는 문자열이 target 에 지정한 문자열로 변환되어 사용
+			// '/api' 라는 문자열이 target 에 지정한 문자열로 변환되어 사용
 			'/api': {
 				target: 'http://localhost:5000',
 				changeOrigin: true, // HTTP 요청 헤더의 Host 값을 서버의 호스트와 일치하도록 변경
