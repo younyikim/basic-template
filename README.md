@@ -282,6 +282,14 @@ import path1 from '@components/home/main.tsx';
     2. VSC의 `Tailwind Document` 익스텐션
     3. [Automatic Class Sorting with Prettier](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 - **Headless UI 컬렉션** : [shadcn/ui](https://ui.shadcn.com/)
+- **비동기 통신 라이브러리** : [Axios](https://github.com/axios/axios)
+  ```bash
+  src/apis
+    - /axios
+    --- index.ts // Module export 파일
+    --- instance.ts // axios instance 생성 관련 코드
+    --- methods.ts // HTTP 메서드 관련 코드 모음
+  ```
 
 ---
 

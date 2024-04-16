@@ -28,6 +28,7 @@
 			"@components/*": ["src/components/*"],
 			"@utils/*": ["src/utils/*"],
 			"@assets/*": ["src/assets/*"],
+			"@apis/*": ["src/apis/*"],
 			"@public/*": ["public/*"],
 			"@icons/*": ["public/assets/icons/*"],
 			"@images/*": ["public/assets/images/*"]
