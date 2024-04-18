@@ -2,6 +2,7 @@
 	"name": "basic-template",
 	"private": true,
 	"version": "0.0.0",
+	"prettier": "@younyikim/prettier-config",
 	"type": "commonjs",
 	"scripts": {
 		"dev": "vite",
@@ -32,6 +33,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.2.0",
 		"@typescript-eslint/parser": "^7.2.0",
 		"@vitejs/plugin-react": "^4.2.1",
+		"@younyikim/prettier-config": "^1.0.0",
 		"autoprefixer": "^10.4.19",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",

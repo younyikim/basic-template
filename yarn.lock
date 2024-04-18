@@ -901,6 +901,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/prettier@npm:3.0.0"
+  dependencies:
+    prettier: "*"
+  checksum: a2a512d304e5bcf78f38089dc88ad19215e6ab871d435a17aef3ce538a63b07c0e359c18db23989dc1ed9fff96d99eee1f680416080184df5c7e0e3bf767e165
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.12
   resolution: "@types/prop-types@npm:15.7.12"
@@ -1083,6 +1092,15 @@ __metadata:
   peerDependencies:
     vite: ^4.2.0 || ^5.0.0
   checksum: 08d227d27ff2304e395e746bd2d4b5fee40587f69d7e2fcd6beb7d91163c1f1dc26d843bc48e2ffb8f38c6b8a1b9445fb07840e3dcc841f97b56bbb8205346aa
+  languageName: node
+  linkType: hard
+
+"@younyikim/prettier-config@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@younyikim/prettier-config@npm:1.0.0"
+  dependencies:
+    "@types/prettier": ^3.0.0
+  checksum: 5fe014ffe168ce78d9f38c7cee14ae5f3dcb7ce2e26e2aa4c0957a09b0f6139a1cda08f24244c20ca08e53b6fcf00fd9290f361f6ff082221d1f9bb6b10ecc28
   languageName: node
   linkType: hard
 
@@ -1288,6 +1306,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^7.2.0
     "@typescript-eslint/parser": ^7.2.0
     "@vitejs/plugin-react": ^4.2.1
+    "@younyikim/prettier-config": ^1.0.0
     autoprefixer: ^10.4.19
     axios: ^1.6.8
     class-variance-authority: ^0.7.0
@@ -3282,7 +3301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.2.5":
+"prettier@npm:*, prettier@npm:^3.2.5":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
   bin:
