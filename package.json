@@ -3,13 +3,13 @@
 	"private": true,
 	"version": "0.0.0",
 	"prettier": "@younyikim/prettier-config",
-	"type": "commonjs",
+	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"lint": "eslint src --ext ts,tsx --cache --max-warnings 0",
 		"preview": "vite preview",
-		"postinstall": "husky install"
+		"postinstall": "npx mrm lint-staged"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.0.2",
