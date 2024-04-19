@@ -2,7 +2,7 @@
 
 **Table of Content**
 
-1. [템플릿 정보](#템플릿-정보)
+1. [템플릿 정보 & 사용법](#0-템플릿-정보--사용법)
 2. [Vite로 프로젝트 시작하기](#1-vite로-프로젝트-시작하기)
 3. [ESLint, Prettier 설정](#2-eslint-prettier-설정)
 4. [Husky, lint-staged 설정](#3-husky-lint-staged-설정)
@@ -13,7 +13,7 @@
 
 ---
 
-### 0. 템플릿 정보
+### 0. 템플릿 정보 & 사용법
 
 개발도구 : Vite, TypeScript, ESLint, Prettier, Husky, Lint-staged
 
@@ -22,6 +22,61 @@
 프레임워크 및 라이브러리 : React, React Router, React Query, Recoil, Emotion, Material UI
 
 기타 라이브러리 : Axios, Dayjs, Loadsh
+
+Prettier : [@younyikim/prettier-config](https://github.com/younyikim/prettier-config)
+
+---
+
+### 템플릿 사용법
+
+1. Template 사용하기 : 2가지 방법 중 맞는 방법으로 사용한다.
+
+- Github 레포지토리 생성 시,`Repository template` 으로 사용하기
+- Basic-template 코드 다운로드 후, 복사해 사용하기
+
+2. Husky 설정하기
+
+- Template을 자신의 프로젝트에 가져온 후, `yarn` 명령어를 통해 Dependency를 설치하면, package.json의 `postinstall` 명령어가 같이 실행되며 .husky 폴더가 생성된다.
+- 하지만 모노레포를 사용하여 폴더 구조가 아래와 같은 경우, `yarn` 명령어를 통해 Dependency를 설치하기 전,
+  `postinstall` 스크립트를 수정해야한다.
+
+```bash
+  my-new-project
+    -- .git
+    -- /client <- 여기서 Husky를 사용하는 경우
+    -- /server
+```
+
+이러한 폴더 구조의 프로젝트의 경우, 아래와 같이 script를 변경한다.
+
+```bash
+// package.json
+"scripts": {
+    ...
+    "postinstall": "cd .. && husky client/.husky"
+},
+```
+
+스크립트를 변경한 후, `yarn install` 하여 의존성을 설치하면, `/client` 아래 .husky 폴더가 생성된다.
+
+```
+-- .git
+-- /client
+    |---- .husky
+ -- /server
+```
+
+그 다음, `.husky`폴더 아래 `pre-commit` 파일을 생성하고, 아래 내용을 추가한다. (`.husky/_/pre-commit` 위치가 아니라 `.husky/pre-commit`이다.)
+
+```
+// pre-commit
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+ cd client && npx lint-staged
+```
+
+ts,tsx 파일 수정 후, commit을 할 때 eslint 검사가 실행되고 있다면 잘 설치된 것 이다.
 
 ---
 
