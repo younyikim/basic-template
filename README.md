@@ -8,8 +8,7 @@
 4. [Husky, lint-staged 설정](#3-husky-lint-staged-설정)
 5. [TypeScript에서 절대 경로 설정](#4-typescript에서-절대-경로-설정)
 6. [라이브러리 설치](#5-라이브러리-설치)
-7. [React Query 아키텍쳐 추가](#6-react-query-아키텍쳐-추가)
-8. [Axios 캡슐화](#7-axios-캡슐화)
+7. [Axios 캡슐화](#7-axios-캡슐화)
 
 ---
 
@@ -338,6 +337,7 @@ import path1 from '@components/home/main.tsx';
     3. [Automatic Class Sorting with Prettier](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 - **Headless UI 컬렉션** : [shadcn/ui](https://ui.shadcn.com/)
 - **비동기 통신 라이브러리** : [Axios](https://github.com/axios/axios)
+
   ```bash
   src/apis
     - /axios
@@ -346,15 +346,12 @@ import path1 from '@components/home/main.tsx';
     --- methods.ts // HTTP 메서드 관련 코드 모음
   ```
 
+- **Data Fetching** : [TanStack Query](https://tanstack.com/query/v5)
+- **Code Style**: ESLint + Prettier
+
 ---
 
 - 추가 예정 패키지들
 
 * **상태 관리 라이브러리** : Zustand
-* **Data Fetching** : TanStack Query + Axios
 * **Animation 라이브러리**: Framer Motion
-* **Code Style**: ESLint + Prettier
-
-### 6. React Query 아키텍쳐 추가
-
-### 7. Axios 캡슐화
